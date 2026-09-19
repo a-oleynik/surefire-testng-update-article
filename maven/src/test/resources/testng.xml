@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Selected test only">
+    <test name="XML selection">
+        <classes>
+            <class name="com.oleynik.qa.reproducer.suite.SelectedTest"/>
+        </classes>
+    </test>
+</suite>
+

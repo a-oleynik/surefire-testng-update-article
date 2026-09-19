@@ -1,0 +1,11 @@
+.idea/
+.gradle/
+**/build/
+**/target/
+**/bin/
+*.iml
+*.iws
+*.ipr
+*.log
+hs_err_pid*
+

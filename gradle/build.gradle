@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.oleynik.qa.reproducer'
+version = '1.0-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.testng:testng:7.12.0'
+}
+
+test {
+    useTestNG {
+        suites 'src/test/resources/testng.xml'
+    }
+
+    testLogging {
+        events 'passed', 'skipped', 'failed'
+    }
+}
+
