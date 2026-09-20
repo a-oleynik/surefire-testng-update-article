@@ -25,6 +25,7 @@ Two independent projects reproduce the Surefire/Failsafe `suiteXmlFiles` change 
   - [Maven scenarios](#maven-scenarios)
   - [Gradle scenario](#gradle-scenario)
 - [References](#-references)
+- [License](#license)
 
 ---
 
@@ -160,8 +161,15 @@ test {
 - [Apache Maven Failsafe Plugin — Using TestNG](https://maven.apache.org/surefire/maven-failsafe-plugin/examples/testng.html)
 - [TestNG JUnit Platform Engine — Usage, configuration, and limitations](https://github.com/junit-team/testng-engine)
 - [TestNG documentation — `testng.xml`](https://testng.org/#_testng_xml)
+- [TestNG Workshop](https://github.com/a-oleynik/testng-workshop)
 - [Gradle 9.6.0 — `TestNGOptions.suites`](https://docs.gradle.org/9.6.0/javadoc/org/gradle/api/tasks/testing/testng/TestNGOptions.html)
 - Previous article, EN: [TestNG XML Is a Legacy Concept: Here's What Modern Test Suites Should Look Like](https://medium.com/javarevisited/testng-xml-is-a-legacy-concept-heres-what-modern-test-suites-should-look-like-bd5cb380db61)
 - Previous article, RU: [Папирусы древних тестировщиков: почему `testng.xml` больше не нужен](https://medium.com/@aolieinik/testng-xml-is-a-legacy-concept-heres-what-modern-test-suites-should-look-like-r-cbde2581c5e8)
 
 [⬆ Back to Table of Contents](#-table-of-contents)
+
+---
+
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
