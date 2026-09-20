@@ -76,6 +76,8 @@ Run Maven commands from `maven/` and Gradle commands from `gradle/`. On Windows,
 
 ## 🧪 Scenarios
 
+Some commands intentionally finish with a build failure. These expected failures are marked in the table.
+
 | Scenario                                                      | Command                                                                                             | Expected result                                    |
 |---------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|----------------------------------------------------|
 | Surefire `3.5.6` + `testng.xml`                               | `./mvnw clean test -Dsurefire.version=3.5.6`                                                        | 1 test; XML is applied                             |
