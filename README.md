@@ -21,8 +21,9 @@ Two independent projects reproduce the Surefire/Failsafe `suiteXmlFiles` change 
 
 - [Found it useful?](#-found-it-useful)
 - [Project structure](#-project-structure)
-- [Scenarios](#-scenarios)
-- [Gradle scenario](#-gradle-scenario)
+- [Scenarios](#scenarios)
+  - [Maven scenarios](#maven-scenarios)
+  - [Gradle scenario](#gradle-scenario)
 - [References](#-references)
 
 ---
@@ -74,9 +75,13 @@ Run Maven commands from `maven/` and Gradle commands from `gradle/`. On Windows,
 
 ---
 
-## 🧪 Scenarios
+## Scenarios
+
+### Maven scenarios
 
 Some commands intentionally finish with a build failure. These expected failures are marked in the table.
+
+The Maven reproducer is in [`maven/`](maven/). Run all commands in this table from that directory (`cd maven`).
 
 | Scenario                                                      | Command                                                                                             | Expected result                                    |
 |---------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|----------------------------------------------------|
@@ -90,7 +95,6 @@ Some commands intentionally finish with a build failure. These expected failures
 | Failsafe `3.5.6` + `testng.xml`                               | `./mvnw -f pom-failsafe.xml clean verify -Dfailsafe.version=3.5.6`                                  | 1 test; XML is applied                             |
 | Failsafe `3.6.0-M1` + the same XML                            | `./mvnw -f pom-failsafe.xml clean verify -Dfailsafe.version=3.6.0-M1`                               | 2 tests; XML is ignored                            |
 | Failsafe `3.6.0` + the same XML                               | `./mvnw -f pom-failsafe.xml clean verify -Dfailsafe.version=3.6.0`                                  | 2 tests; XML is ignored                            |
-| Gradle + the same XML selection                               | `./gradlew clean test`                                                                              | 1 test; XML is applied                             |
 | Surefire `3.6.0` without an explicit TestNG Engine dependency | `./mvnw clean test`                                                                                 | 2 TestNG tests; engine is added automatically      |
 | Legacy `surefire-testng:3.5.6`                                | `./mvnw -f pom-legacy-provider.xml clean test`                                                      | expected failure: `TestRequest.getSuiteXmlFiles()` |
 | Legacy `surefire-testng:3.5.5`                                | `./mvnw -f pom-legacy-provider.xml clean test -Dlegacy.provider.version=3.5.5`                      | expected failure: `TestRequest.getSuiteXmlFiles()` |
@@ -103,13 +107,15 @@ Some commands intentionally finish with a build failure. These expected failures
 
 `SelectedTest`, `ExcludedTest`, and `testng.xml` are identical in the Maven and Gradle projects. Both test classes pass; the XML behavior is demonstrated by the number of executed tests.
 
-[⬆ Back to Table of Contents](#-table-of-contents)
+### Gradle scenario
 
----
-
-## 🐘 Gradle scenario
+The Gradle reproducer is in [`gradle/`](gradle/). Run the commands below from that directory.
 
 `gradle/src/test/resources/testng.xml` selects only `SelectedTest`. `ExcludedTest` is present in the same source tree but must not run.
+
+| Scenario                          | Command                 | Expected result        |
+|-----------------------------------|-------------------------|------------------------|
+| Gradle + `testng.xml` selection   | `./gradlew clean test`  | 1 test; XML is applied |
 
 Linux, macOS, or Git Bash:
 
