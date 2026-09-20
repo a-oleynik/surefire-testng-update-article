@@ -1,6 +1,29 @@
 # Surefire 3.6.0 + TestNG XML Reproducer
 
+> Companion code for the Medium article **Maven Surefire 3.6.0: What Happened to TestNG and `testng.xml`**:
+>
+> - **EN:** [Maven Surefire 3.6.0: What Happened to TestNG and `testng.xml`](https://medium.com/@andrei.oleynik/maven-surefire-3-6-0-what-happened-to-testng-and-testng-xml-ae5cb882d41a)
+> - **RU:** [Maven Surefire 3.6.0: что произошло с TestNG и `testng.xml`](https://medium.com/@aolieinik/maven-surefire-3-6-0-what-happened-to-testng-and-testng-xml-r-8ad2c1e78056)
+
 Two independent projects reproduce the Surefire/Failsafe `suiteXmlFiles` change and compare it with Gradle TestNG XML support.
+
+---
+
+## 📋 Table of Contents
+
+- [Found it useful?](#-found-it-useful)
+- [Project structure](#project-structure)
+- [Scenarios](#scenarios)
+- [Gradle scenario](#gradle-scenario)
+- [References](#references)
+
+---
+
+## ⭐ Found it useful?
+
+If you found these examples useful, please give the repository a ⭐. Your support helps the project reach more Java and QA engineers.
+
+---
 
 ## Project structure
 
@@ -39,6 +62,10 @@ Requirements: JDK 21. Maven `3.9.12` and Gradle `9.6.0` are provided by the wrap
 
 Run Maven commands from `maven/` and Gradle commands from `gradle/`. On Windows, use `mvnw.cmd` and `gradlew.bat` instead of `./mvnw` and `./gradlew`.
 
+[⬆ Back to Table of Contents](#-table-of-contents)
+
+---
+
 ## Scenarios
 
 | Scenario                                                      | Command                                                                                             | Expected result                                    |
@@ -65,6 +92,10 @@ Run Maven commands from `maven/` and Gradle commands from `gradle/`. On Windows,
 | Exclude a TestNG group                                        | `./mvnw clean test -Dtest=GroupsCheck -DexcludedGroups=regression`                                  | only `smoke_test` runs                             |
 
 `SelectedTest`, `ExcludedTest`, and `testng.xml` are identical in the Maven and Gradle projects. Both test classes pass; the XML behavior is demonstrated by the number of executed tests.
+
+[⬆ Back to Table of Contents](#-table-of-contents)
+
+---
 
 ## Gradle scenario
 
@@ -101,3 +132,20 @@ test {
     }
 }
 ```
+
+[⬆ Back to Table of Contents](#-table-of-contents)
+
+---
+
+## References
+
+- [Apache Maven Surefire Plugin — What's New in Surefire 3.6.0](https://maven.apache.org/surefire-archives/surefire-LATEST/maven-surefire-plugin/whats-new-3-6-0.html)
+- [Apache Maven Surefire Plugin — Using TestNG](https://maven.apache.org/surefire/maven-surefire-plugin/examples/testng.html)
+- [Apache Maven Failsafe Plugin — Using TestNG](https://maven.apache.org/surefire/maven-failsafe-plugin/examples/testng.html)
+- [TestNG JUnit Platform Engine — Usage, configuration, and limitations](https://github.com/junit-team/testng-engine)
+- [TestNG documentation — `testng.xml`](https://testng.org/#_testng_xml)
+- [Gradle 9.6.0 — `TestNGOptions.suites`](https://docs.gradle.org/9.6.0/javadoc/org/gradle/api/tasks/testing/testng/TestNGOptions.html)
+- Previous article, EN: [TestNG XML Is a Legacy Concept: Here's What Modern Test Suites Should Look Like](https://medium.com/javarevisited/testng-xml-is-a-legacy-concept-heres-what-modern-test-suites-should-look-like-bd5cb380db61)
+- Previous article, RU: [Папирусы древних тестировщиков: почему `testng.xml` больше не нужен](https://medium.com/@aolieinik/testng-xml-is-a-legacy-concept-heres-what-modern-test-suites-should-look-like-r-cbde2581c5e8)
+
+[⬆ Back to Table of Contents](#-table-of-contents)
