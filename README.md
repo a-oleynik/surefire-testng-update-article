@@ -1,5 +1,13 @@
 # Surefire 3.6.0 + TestNG XML Reproducer
 
+[![Java](https://img.shields.io/badge/Java-21-orange.svg)](https://www.oracle.com/java/)
+[![Maven](https://img.shields.io/badge/Maven-3.9.12-blue.svg)](https://maven.apache.org/)
+[![Maven Surefire](https://img.shields.io/badge/Maven_Surefire-3.6.0-blue.svg)](https://maven.apache.org/surefire/maven-surefire-plugin/)
+[![Maven Failsafe](https://img.shields.io/badge/Maven_Failsafe-3.6.0-blue.svg)](https://maven.apache.org/surefire/maven-failsafe-plugin/)
+[![Gradle](https://img.shields.io/badge/Gradle-9.6.0-02303A.svg)](https://gradle.org/)
+[![TestNG](https://img.shields.io/badge/TestNG-7.12.0-green.svg)](https://testng.org/)
+[![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)](LICENSE)
+
 > Companion code for the Medium article **Maven Surefire 3.6.0: What Happened to TestNG and `testng.xml`**:
 >
 > - **EN:** [Maven Surefire 3.6.0: What Happened to TestNG and `testng.xml`](https://medium.com/@andrei.oleynik/maven-surefire-3-6-0-what-happened-to-testng-and-testng-xml-ae5cb882d41a)
@@ -12,10 +20,10 @@ Two independent projects reproduce the Surefire/Failsafe `suiteXmlFiles` change 
 ## 📋 Table of Contents
 
 - [Found it useful?](#-found-it-useful)
-- [Project structure](#project-structure)
-- [Scenarios](#scenarios)
-- [Gradle scenario](#gradle-scenario)
-- [References](#references)
+- [Project structure](#-project-structure)
+- [Scenarios](#-scenarios)
+- [Gradle scenario](#-gradle-scenario)
+- [References](#-references)
 
 ---
 
@@ -25,7 +33,7 @@ If you found these examples useful, please give the repository a ⭐. Your suppo
 
 ---
 
-## Project structure
+## 📁 Project structure
 
 ```text
 surefire-testng-3.6.0-reproducer/
@@ -66,7 +74,7 @@ Run Maven commands from `maven/` and Gradle commands from `gradle/`. On Windows,
 
 ---
 
-## Scenarios
+## 🧪 Scenarios
 
 | Scenario                                                      | Command                                                                                             | Expected result                                    |
 |---------------------------------------------------------------|-----------------------------------------------------------------------------------------------------|----------------------------------------------------|
@@ -97,7 +105,7 @@ Run Maven commands from `maven/` and Gradle commands from `gradle/`. On Windows,
 
 ---
 
-## Gradle scenario
+## 🐘 Gradle scenario
 
 `gradle/src/test/resources/testng.xml` selects only `SelectedTest`. `ExcludedTest` is present in the same source tree but must not run.
 
@@ -137,7 +145,7 @@ test {
 
 ---
 
-## References
+## 🔗 References
 
 - [Apache Maven Surefire Plugin — What's New in Surefire 3.6.0](https://maven.apache.org/surefire-archives/surefire-LATEST/maven-surefire-plugin/whats-new-3-6-0.html)
 - [Apache Maven Surefire Plugin — Using TestNG](https://maven.apache.org/surefire/maven-surefire-plugin/examples/testng.html)
